@@ -665,6 +665,27 @@
           This is the single largest engineering challenge of the design.
         </div>
       </div>
+
+      <div class="faq-block">
+        <div class="faq-q">&#9888;&#65039; Why does producing electricity always lose so much energy?</div>
+        <div class="faq-a">
+          <p>
+            It's not a flaw in the design — it's a law of physics. Any device that converts heat into work is called a
+            <span class="term" data-term="Heat Engine" data-def="A heat engine is any device that converts thermal energy into mechanical work by moving heat from a hot source to a cold sink. Examples include steam turbines, car engines, and the Closed Brayton Cycle used here. All heat engines are fundamentally limited by the Carnot efficiency: no engine can convert all of its heat input into work.">heat engine</span>,
+            and all heat engines are fundamentally limited by the
+            <span class="term" data-term="Carnot Efficiency" data-def="The Carnot efficiency is the theoretical maximum efficiency any heat engine can achieve: η_max = 1 − T_cold / T_hot, where temperatures are in Kelvin. It sets a hard ceiling — no real engine can exceed it. The gap between Carnot efficiency and actual efficiency comes from real-world losses: friction, heat leaks, pressure drops, and imperfect components.">Carnot efficiency limit</span>:
+            the maximum possible efficiency equals 1 minus the ratio of the cold temperature to the hot temperature (in Kelvin).
+          </p>
+          <p>
+            For this system, the reactor runs at roughly 1,000 K and the radiators operate around 400 K. That gives a theoretical maximum efficiency of 1 − 400/1,000 = <strong>60%</strong>. The Closed Brayton Cycle achieves <strong>37.5%</strong> in practice — about 63% of the Carnot limit, which is very good for a real engineering system.
+          </p>
+          <p>
+            The remaining 62.5% does not disappear — it becomes waste heat that must be continuously rejected. This is the same reason every power plant on Earth (coal, gas, nuclear) also produces enormous amounts of waste heat. On Earth that heat goes into rivers, cooling towers, or the atmosphere. On the Moon, with no air or water, it can only leave as
+            <span class="term" data-term="Thermal Radiation (Stefan-Boltzmann Law)" data-def="Every object above absolute zero emits infrared radiation. The power emitted per unit area follows the Stefan-Boltzmann law: q = εσT⁴, where ε is emissivity (0–1), σ = 5.67×10⁻⁸ W/m²K⁴, and T is temperature in Kelvin. At 500 K (227°C), a perfect emitter (ε=1) radiates only 3,544 W/m². To reject 250 kW, you need enormous panel area — and even more if the radiators can see the hot lunar surface.">infrared radiation</span>
+            through large deployable panels — which is exactly why heat rejection is the dominant engineering challenge of this design.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -895,6 +916,24 @@
             <li>Long-duration materials testing under combined radiation, vacuum, and temperature cycling representative of the lunar environment.</li>
             <li>Lunar dust and <span class="term" data-term="Thermal Cycling Validation" data-def="Physical component-level testing through repeated temperature cycles between lunar extremes (−173°C to +127°C) to confirm that seals, joints, coatings, and structural connections survive the full mission lifetime without fatigue failure.">thermal cycling validation</span>, the only way to confirm that radiators, seals, and deployable structures survive years of lunar exposure.</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="faq-block" style="margin-top:1.5rem;">
+        <div class="faq-q">&#128336; How far away is a real lunar nuclear power plant?</div>
+        <div class="faq-a">
+          <p>
+            This MQP is a design study, not a hardware program, but the broader effort is real and accelerating. Here's where the timeline stands as of 2026:
+          </p>
+          <ul>
+            <li><strong>Now (2026):</strong> NASA's Fission Surface Power (FSP) project has awarded contracts to competing teams, including Lockheed Martin and IX (Intuitive Machines + X-energy), for preliminary designs of a ~10 kW<sub>e</sub> demonstration reactor.</li>
+            <li><strong>~2030:</strong> A subscale demonstration reactor (~10 kW<sub>e</sub>) could fly to the Moon as a technology demonstrator, proving the concept in the actual lunar environment.</li>
+            <li><strong>~2032–2035:</strong> A system in the 40–100 kW<sub>e</sub> range could support early Artemis surface operations and initial ISRU activities.</li>
+            <li><strong>~2035–2040:</strong> A full 150 kW<sub>e</sub> system like the one analyzed in this MQP would be needed to power a mature Artemis Base Camp with full propellant production.</li>
+          </ul>
+          <p>
+            The core technology is mature enough to build today. The primary constraints are budget, policy, and the pace of the broader Artemis program, not fundamental engineering unknowns. This MQP contributes to the technical foundation that makes that future possible.
+          </p>
         </div>
       </div>
     </div>
