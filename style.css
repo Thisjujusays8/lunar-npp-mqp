@@ -373,6 +373,27 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .download-btn .dl-icon { font-size: 1.2rem; }
 .download-note { font-size: .78rem; color: var(--text-muted); margin-top: .5rem; }
 
+/* ─── Figures & Images ──────────────────────────────── */
+.fig { margin: 0; display: flex; flex-direction: column; }
+.fig-img { width: 100%; border-radius: var(--radius-sm); display: block; background: var(--bg-card); border: 1px solid var(--border); }
+.fig-cap { font-size: .74rem; color: var(--text-muted); line-height: 1.55; margin-top: .5rem; }
+.fig-wide { margin-top: 1.5rem; }
+.fig-wide .fig-img { max-height: 480px; object-fit: contain; }
+.fig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.fig-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.fig-section-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-top: 2.5rem; margin-bottom: .25rem; }
+@media (max-width: 640px) {
+  .fig-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Challenges grid ───────────────────────────────── */
+.challenges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; margin-top: 2rem; }
+.challenge-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
+.challenge-card:hover { border-color: var(--border-acc); }
+.challenge-icon { font-size: 1.5rem; margin-bottom: .65rem; }
+.challenge-card h3 { color: var(--accent); margin-bottom: .5rem; font-size: .95rem; }
+.challenge-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.75; }
+
 /* ─── FAQ / Explainer blocks ────────────────────────── */
 .faq-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius); overflow: hidden; margin-top: 1.5rem; }
 .faq-q { font-family: var(--font-head); font-size: .95rem; font-weight: 600; color: var(--text); padding: 1rem 1.25rem; }

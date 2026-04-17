@@ -26,6 +26,7 @@
         <li><a href="#power-uses">Power Uses</a></li>
         <li><a href="#objectives">Objectives</a></li>
         <li><a href="#methods">Methods</a></li>
+        <li><a href="#challenges">Challenges</a></li>
         <li><a href="#architecture">Architecture</a></li>
         <li><a href="#subsystems">Subsystems</a></li>
         <li><a href="#results">Results</a></li>
@@ -605,13 +606,128 @@
         </div>
 
       </div>
+
+      <div class="fig-section-label">SolidWorks Simulation Results</div>
+      <div class="fig-grid-4">
+        <figure class="fig">
+          <img src="assets/tpms-thermal.png" alt="SolidWorks thermal simulation of TPMS gyroid heat exchanger showing temperature gradient from 391 K to 956 K" class="fig-img" />
+          <figcaption class="fig-cap">Thermal distribution through the TPMS gyroid (391–956 K). Hot fluid enters from the reactor side; cooler fluid exits toward the radiator loop.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="assets/tpms-flow-a.png" alt="SolidWorks flow trajectory simulation through TPMS heat exchanger, horizontal view" class="fig-img" />
+          <figcaption class="fig-cap">Flow trajectories (horizontal cross-section) showing fluid paths through the gyroid geometry and how the surface geometry promotes contact and mixing.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="assets/tpms-flow-b.png" alt="SolidWorks flow trajectory simulation through TPMS heat exchanger, vertical full-height view" class="fig-img" />
+          <figcaption class="fig-cap">Full-height flow trajectory view (286–2031 K range). The complex TPMS channels create turbulent flow that maximizes heat transfer per unit volume.</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="assets/brayton-reference.png" alt="Lunar Brayton Cycle reference diagram showing gyroid heat exchanger assembly and radiative cooling cylinder" class="fig-img" />
+          <figcaption class="fig-cap">Brayton cycle reference concept showing the gyroid heat exchanger and the Comp+Turbo+Gen assembly housed inside a radiative cooling cylinder — a key design reference used by the team.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ CHALLENGES ══════════════════════════ -->
+  <section id="challenges" class="section section-alt">
+    <div class="container">
+      <div class="section-label">07: Engineering Challenges</div>
+      <h2>Why Building This Is Hard</h2>
+      <p class="section-intro">
+        The concept is straightforward: put a nuclear reactor on the Moon, convert its heat to electricity, and power a base. The engineering is anything but. Every step runs into obstacles that don't exist on Earth.
+      </p>
+
+      <figure class="fig fig-wide">
+        <img src="assets/lunar-base-concept.png" alt="Lunar base concept render showing habitat modules, vehicles, and astronauts on the lunar surface with Earth in the background" class="fig-img" />
+        <figcaption class="fig-cap">A concept render of a mature Artemis-era lunar base. Powering an outpost like this continuously — through 14-day nights, in a hard vacuum, for years — is the central engineering problem this project addresses.</figcaption>
+      </figure>
+
+      <div class="challenges-grid">
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#127777;</div>
+          <h3>Rejecting 424 kW of Waste Heat With No Atmosphere</h3>
+          <p>
+            This is the single hardest problem. On Earth, power plants dump waste heat into rivers, lakes, or the atmosphere. On the Moon there is no air and no water — the only way to shed heat is
+            <span class="term" data-term="Thermal Radiation (Stefan-Boltzmann Law)" data-def="Every object above absolute zero emits infrared radiation. The power emitted per unit area follows the Stefan-Boltzmann law: q = εσT⁴, where ε is emissivity (0–1), σ = 5.67×10⁻⁸ W/m²K⁴, and T is temperature in Kelvin. At 500 K (227°C), a perfect emitter (ε=1) radiates only 3,544 W/m². To reject 250 kW, you need enormous panel area.">thermal radiation</span>
+            from large panels pointed at deep space. The system's radiators need roughly 222 m² of panel area — about the size of a tennis court — to continuously shed 424 kW. Those panels must be lightweight, must survive launch, and must deploy automatically on the lunar surface without crew assistance.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#127958;</div>
+          <h3>Lunar Dust Destroying Everything</h3>
+          <p>
+            <span class="term" data-term="Regolith Dust" data-def="Lunar regolith dust particles are jagged and irregular (unlike Earth sand, which is rounded by water erosion). They are electrostatically charged by solar UV and solar wind, causing them to levitate and cling to surfaces. They are a severe hazard to radiator panels, bearings, seals, and optical surfaces.">Lunar dust</span>
+            is unlike anything on Earth. Apollo astronauts found it coated their suits, jammed mechanisms, and scratched visors within hours. The particles are microscopically sharp (never smoothed by water or wind erosion) and electrostatically charged, making them cling to every surface. A thin layer of dust on a radiator panel reduces its emissivity — its ability to radiate heat — and there's currently no reliable way to clean panels remotely over a multi-year mission. This is an unsolved problem.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#9889;</div>
+          <h3>300°C Thermal Swings Cracking Everything Apart</h3>
+          <p>
+            The lunar surface swings between +127°C in direct sunlight and &minus;173°C in shadow. The reactor itself runs at around 1,000 K. Every time the system cycles through these temperatures, metal components expand and contract. Over hundreds of thousands of cycles across a multi-year mission, this
+            <span class="term" data-term="Thermal Cycling Validation" data-def="Physical component-level testing through repeated temperature cycles between lunar extremes (−173°C to +127°C) to confirm that seals, joints, coatings, and structural connections survive the full mission lifetime without fatigue failure.">thermal fatigue</span>
+            can crack seals, delaminate coatings, loosen joints, and fracture welds — with no crew available to repair them. Every material choice must account for the full thermal envelope over years of continuous operation.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#9762;</div>
+          <h3>Radiation: Shielding Mass vs. Launch Cost</h3>
+          <p>
+            The reactor produces intense neutron and gamma radiation. Crew can't live anywhere near it without adequate shielding — but shielding is heavy, and every kilogram costs roughly $1M to deliver to the lunar surface. The design uses
+            <span class="term" data-term="Shadow Shielding" data-def="Shadow shielding uses geometric distance and terrain features to reduce radiation dose to crew rather than placing heavy shielding directly around the reactor. If the reactor is placed over a crater rim or behind a mound, the terrain itself attenuates radiation in the crew direction, saving enormous amounts of shielding mass.">shadow shielding</span>
+            — positioning the reactor behind terrain features so that the Moon itself blocks radiation — but this requires precise placement during landing and limits where the reactor can be deployed.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#128640;</div>
+          <h3>Everything Must Deploy Itself — Flawlessly</h3>
+          <p>
+            The entire power system must launch folded inside a rocket fairing, land on the Moon, and unfold its radiators automatically — without any crew present and without the ability to send someone to fix it if something goes wrong. Every hinge, latch, motor, cable, and seal must work correctly after surviving the vibration of launch, the thermal shock of transit, and the impact of landing. A single failed deployment means the base has no power. There are no second chances.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#129302;</div>
+          <h3>Running for Years With No Maintenance</h3>
+          <p>
+            Earth power plants have maintenance crews, spare parts warehouses, and the ability to shut down for repairs. A lunar nuclear reactor has none of these. The
+            <span class="term" data-term="TAC (Turbo Alternator Compressor)" data-def="The TAC is a single high-speed rotating assembly (typically 45,000–100,000 RPM) combining: a radial turbine that expands hot He-Xe gas to extract shaft power; a permanent magnet alternator that converts shaft rotation to AC electricity; and a centrifugal compressor that pressurizes the cooled gas to restart the cycle. The TAC is the highest-criticality mechanical component in the CBC system.">TAC</span>
+            spins at 45,000 RPM in a hard vacuum — its bearings must survive for years without lubrication (conventional lubricants outgas and evaporate in vacuum). The reactor must autonomously monitor its own health, manage its own power output, and respond to anomalies without waiting for instructions from Earth, where a signal takes 1.3 seconds one-way.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#9732;</div>
+          <h3>Micrometeorite Impacts on Radiator Panels</h3>
+          <p>
+            With no atmosphere to burn up incoming particles, the Moon's surface receives a constant low-level bombardment of tiny high-velocity impactors. Radiator panels — which must be large and thin to minimize mass while maximizing surface area — are particularly vulnerable. A single puncture in a fluid-cooled panel could cause coolant loss and cascading thermal failure. Mitigations include redundant parallel flow paths, self-sealing materials, and designing for graceful degradation, but none of these have been validated over multi-year lunar timescales.
+          </p>
+        </div>
+
+        <div class="challenge-card">
+          <div class="challenge-icon">&#128299;</div>
+          <h3>Nuclear Safety and Launch Regulations</h3>
+          <p>
+            Any nuclear-powered spacecraft must be reviewed and approved by the White House Office of Science and Technology Policy under Presidential Directive NSC-25. The reactor must be designed to remain
+            <span class="term" data-term="Sub-Critical State" data-def="A sub-critical assembly cannot sustain a chain reaction — each fission event produces fewer than one subsequent fission on average. Space reactors are specifically designed to remain sub-critical under all conceivable launch accident scenarios (immersion in water, burial in earth, or dispersion). Only deliberate withdrawal of control drums after safe landing can bring the reactor to criticality.">sub-critical</span>
+            under every conceivable launch accident scenario — impact, fire, immersion in water, dispersal of fuel. The approval and safety verification process alone can take years and adds significant design constraints that compete with performance and mass goals.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <!-- ════════════════════════════ ARCHITECTURE ═════════════════════════ -->
   <section id="architecture" class="section">
     <div class="container">
-      <div class="section-label">07: System Concept &amp; Architecture</div>
+      <div class="section-label">08: System Concept &amp; Architecture</div>
       <h2>How the System Works</h2>
       <p class="section-intro">
         The design uses a modified
@@ -656,6 +772,11 @@
         </div>
       </div>
 
+      <figure class="fig fig-wide" style="margin-top:1.75rem;">
+        <img src="assets/system-diagram.png" alt="Full system flow diagram showing NaK and HeXe loops, all thermodynamic state points, component efficiencies, and 150 kWe output" class="fig-img" />
+        <figcaption class="fig-cap">Complete system flow diagram. The outer NaK (sodium-potassium) loop transfers heat from the reactor to the TPMS heat exchanger. The inner HeXe (helium-xenon) Brayton loop converts that heat to 150 kWe, with 424.1 kWt rejected through the radiator (222.2 m² panel area). State temperatures and pressures are labeled at each node.</figcaption>
+      </figure>
+
       <div class="arch-heat-bar">
         <div class="heat-icon">&#127777;</div>
         <div class="heat-text">
@@ -692,7 +813,7 @@
   <!-- ════════════════════════════ SUBSYSTEMS ═══════════════════════════ -->
   <section id="subsystems" class="section section-alt">
     <div class="container">
-      <div class="section-label">08: Subsystems</div>
+      <div class="section-label">09: Subsystems</div>
       <h2>Deep Dive: Each Subsystem</h2>
       <div class="subsystem-tabs">
         <button class="tab-btn active" data-tab="reactor">Reactor</button>
@@ -737,6 +858,16 @@
               <div class="spec-row"><div class="spec-key">Startup Location</div><div class="spec-val">Lunar surface (post-landing)</div></div>
             </div>
           </div>
+        </div>
+        <div class="fig-grid" style="margin-top:1.5rem;">
+          <figure class="fig">
+            <img src="assets/reactor-core.png" alt="Cross-section diagram of reactor core showing 127 heat pipes, 381 fuel pins, 6 control drums, and reflector segments" class="fig-img" />
+            <figcaption class="fig-cap">Reactor core cross-section. The hexagonal core contains 381 UN fuel pins (magenta) surrounded by 127 sodium heat pipes (white). Six rotating control drums on the periphery regulate reactivity. Core flat-to-flat: 26 cm. Radial reflector OD: 48 cm.</figcaption>
+          </figure>
+          <figure class="fig">
+            <img src="assets/fuel-pin-heatpipe.png" alt="Detailed cross-section of a single fuel pin and heat pipe assembly showing UN pellets, cladding layers, and sodium wick" class="fig-img" />
+            <figcaption class="fig-cap">Individual fuel pin and heat pipe cross-section. UN fuel pellets (0.836 cm OD) are enclosed in rhenium cladding. Each sodium heat pipe has a central void, sodium-saturated wick, and annulus gap — all sealed within a molybdenum wall. Heat pipe length: 102 cm.</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -810,11 +941,16 @@
           </div>
           <div class="subsystem-aside">
             <div class="spec-table">
-              <div class="spec-row"><div class="spec-key">Waste Heat Load</div><div class="spec-val">250 kW</div></div>
+              <div class="spec-row"><div class="spec-key">Waste Heat Load</div><div class="spec-val">424.1 kW<sub>t</sub></div></div>
               <div class="spec-row"><div class="spec-key">Rejection Mechanism</div><div class="spec-val">Thermal radiation</div></div>
+              <div class="spec-row"><div class="spec-key">Radiator Area</div><div class="spec-val">222.2 m²</div></div>
               <div class="spec-row"><div class="spec-key">Heat Exchanger</div><div class="spec-val">TPMS geometry (simulated)</div></div>
               <div class="spec-row"><div class="spec-key">Biggest Challenge</div><div class="spec-val">Panel area vs. mass trade</div></div>
             </div>
+            <figure class="fig" style="margin-top:1rem;">
+              <img src="assets/tpms-thermal.png" alt="SolidWorks thermal simulation of TPMS gyroid heat exchanger" class="fig-img" />
+              <figcaption class="fig-cap">TPMS gyroid thermal simulation (391–956 K). High surface area drives efficient heat transfer from the HeXe cold leg to the radiator coolant loop.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -858,7 +994,7 @@
   <!-- ════════════════════════════ RESULTS ══════════════════════════════ -->
   <section id="results" class="section section-dark">
     <div class="container">
-      <div class="section-label">09: Results</div>
+      <div class="section-label">10: Results</div>
       <h2>What the Analysis Found</h2>
       <div class="results-grid">
         <div class="result-card">
@@ -896,7 +1032,7 @@
   <!-- ══════════════════════ CONCLUSIONS & FUTURE WORK ══════════════════ -->
   <section id="conclusions" class="section">
     <div class="container">
-      <div class="section-label">10: Conclusions &amp; Future Work</div>
+      <div class="section-label">11: Conclusions &amp; Future Work</div>
       <h2>What We Learned &amp; What Comes Next</h2>
       <div class="conclusions-grid">
         <div class="conclusion-block">
@@ -942,7 +1078,7 @@
   <!-- ════════════════════════════ GLOSSARY ═════════════════════════════ -->
   <section id="glossary" class="section section-alt">
     <div class="container">
-      <div class="section-label">11: Glossary</div>
+      <div class="section-label">12: Glossary</div>
       <h2>Technical Terms</h2>
       <p class="section-intro">
         Every term highlighted throughout this site is collected here alphabetically.
@@ -957,7 +1093,7 @@
   <!-- ════════════════════════════ SOURCES ══════════════════════════════ -->
   <section id="sources" class="section section-dark">
     <div class="container">
-      <div class="section-label">12: Sources</div>
+      <div class="section-label">13: Sources</div>
       <h2>References</h2>
       <p class="section-intro">Sources cited in this research. Open-access links provided where available.</p>
       <ol class="sources-list">
@@ -1006,7 +1142,7 @@
   <!-- ════════════════════════════ TEAM ═════════════════════════════════ -->
   <section id="team" class="section">
     <div class="container">
-      <div class="section-label">13: The Team</div>
+      <div class="section-label">14: The Team</div>
       <h2>About This Project</h2>
       <p class="section-intro">
         This website is a companion to our MQP poster, providing expanded context, inline glossary definitions,
