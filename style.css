@@ -153,7 +153,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .acc-inner { padding: 0 1.5rem 2.5rem; }
 
 /* ─── Section intro ─────────────────────────────────── */
-.section-intro  { color: var(--text-muted); font-size: 1rem; max-width: 720px; margin-bottom: 2rem; line-height: 1.8; }
+.section-intro  { color: var(--text-muted); font-size: 1rem; max-width: 720px; margin-bottom: 1.5rem; line-height: 1.8; }
 .body-text p    { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.85; }
 .body-text p:last-child { margin-bottom: 0; }
 
@@ -252,7 +252,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .method-card p  { font-size: .85rem; color: var(--text-muted); line-height: 1.7; }
 
 /* ─── Architecture diagram ──────────────────────────── */
-.arch-diagram { display: flex; align-items: center; overflow-x: auto; padding: 2rem 0 1rem; -webkit-overflow-scrolling: touch; }
+.arch-diagram { display: flex; align-items: center; overflow-x: auto; padding: 1rem 0 1rem; -webkit-overflow-scrolling: touch; }
 .arch-node { flex-shrink: 0; width: 155px; background: var(--bg-card); border: 1.5px solid var(--border); border-top: 3px solid var(--accent-color, var(--accent)); border-radius: var(--radius); padding: 1.2rem .9rem 1rem; text-align: center; transition: transform var(--tr), box-shadow var(--tr); }
 .arch-node:hover { border-color: var(--border-acc); }
 .arch-icon { font-size: 1.6rem; margin-bottom: .4rem; }
@@ -364,17 +364,17 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .fig { margin: 0; display: flex; flex-direction: column; }
 .fig-img { width: 100%; border-radius: var(--radius-sm); display: block; background: var(--bg-card); border: 1px solid var(--border); }
 .fig-cap { font-size: .74rem; color: var(--text-muted); line-height: 1.55; margin-top: .5rem; }
-.fig-wide { margin-top: 1.5rem; }
+.fig-wide { margin-top: 1.5rem; margin-bottom: .5rem; }
 .fig-wide .fig-img { max-height: 480px; object-fit: contain; }
 .fig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
 .fig-grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-.fig-section-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-top: 2.5rem; margin-bottom: .25rem; }
+.fig-section-label { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-top: 2rem; margin-bottom: .25rem; }
 @media (max-width: 640px) {
   .fig-grid { grid-template-columns: 1fr; }
 }
 
 /* ─── Challenges grid ───────────────────────────────── */
-.challenges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; margin-top: 2rem; }
+.challenges-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
 .challenge-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
 .challenge-card:hover { border-color: var(--border-acc); }
 .challenge-icon { font-size: 1.5rem; margin-bottom: .65rem; }

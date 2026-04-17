@@ -60,10 +60,22 @@
     sec.classList.add('open');
     sec.querySelector('.acc-head').setAttribute('aria-expanded', 'true');
     body.style.maxHeight = body.scrollHeight + 'px';
+    // After the slide-down animation, release max-height so late-loading
+    // images and dynamic content can expand the section freely.
+    function onEnd() {
+      body.style.maxHeight = 'none';
+      body.removeEventListener('transitionend', onEnd);
+    }
+    body.addEventListener('transitionend', onEnd);
   }
 
   function close(sec) {
     const body = sec.querySelector('.acc-body');
+    // If max-height is 'none' we need a concrete value to animate FROM.
+    if (body.style.maxHeight === 'none' || !body.style.maxHeight) {
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.offsetHeight; // force reflow so the browser registers the value
+    }
     sec.classList.remove('open');
     sec.querySelector('.acc-head').setAttribute('aria-expanded', 'false');
     body.style.maxHeight = '0';
@@ -158,9 +170,15 @@ function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
     sec.classList.add('open');
     sec.querySelector('.acc-head').setAttribute('aria-expanded', 'true');
     body.style.maxHeight = body.scrollHeight + 'px';
+    function onEnd() { body.style.maxHeight = 'none'; body.removeEventListener('transitionend', onEnd); }
+    body.addEventListener('transitionend', onEnd);
   }
   function closeSec(sec) {
     const body = sec.querySelector('.acc-body');
+    if (body.style.maxHeight === 'none' || !body.style.maxHeight) {
+      body.style.maxHeight = body.scrollHeight + 'px';
+      body.offsetHeight;
+    }
     sec.classList.remove('open');
     sec.querySelector('.acc-head').setAttribute('aria-expanded', 'false');
     body.style.maxHeight = '0';
