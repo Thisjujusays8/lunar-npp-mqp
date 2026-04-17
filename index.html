@@ -60,7 +60,11 @@
     </div>
   </section>
 
-    <div class="acc-sections">
+    <div class="acc-controls">
+    <button class="acc-ctrl-btn" id="expand-all">Expand All</button>
+    <button class="acc-ctrl-btn" id="collapse-all">Collapse All</button>
+  </div>
+  <div class="acc-sections">
 
   <div class="acc-section" id="history">
     <button class="acc-head" aria-expanded="false">
@@ -857,6 +861,11 @@
         <figcaption class="fig-cap">Complete system flow diagram. The outer NaK (sodium-potassium) loop transfers heat from the reactor to the TPMS heat exchanger. The inner HeXe (helium-xenon) Brayton loop converts that heat to 150 kWe, with 424.1 kWt rejected through the radiator (222.2 m² panel area). State temperatures and pressures are labeled at each node.</figcaption>
       </figure>
 
+      <figure class="fig fig-wide">
+        <img src="assets/system-diagram-states.png" alt="Detailed system flow diagram with all thermodynamic state point values labeled including temperatures, pressures, and component efficiencies" class="fig-img" />
+        <figcaption class="fig-cap">Detailed state-point diagram. Each numbered state (1-8 plus A-C on the NaK side) shows temperature (K), pressure (MPa), and key component efficiencies: Compressor 82.2%, Turbine 86.7%, TAC at 45 kRPM, Recuperator 95%. Radiator rejects 424.1 kWt at 393 K cold-side temperature.</figcaption>
+      </figure>
+
       <div class="arch-heat-bar">
         <div class="heat-icon">&#127777;</div>
         <div class="heat-text">
@@ -1225,47 +1234,33 @@
         <h2 style="margin-bottom:.75rem;">References</h2>
 <div class="container" style="padding:0;">
 
-<p class="section-intro">Sources cited in this research. Open-access links provided where available.</p>
+<p class="section-intro">Sources cited in this research. All links open in a new tab.</p>
       <ol class="sources-list">
         <li class="source-item">
-          <span class="source-title">Brayton Cycle, Gas Turbine Engine</span>
-          <span class="source-venue">Nuclear-Power.com, Thermodynamic Cycles Reference.</span>
+          <span class="source-authors">Space Exploration Technologies Corp.</span>
+          <span class="source-title">Falcon User's Guide</span>
+          <span class="source-venue">SpaceX, Hawthorne, CA, May 2025.</span>
+          <a href="https://www.spacex.com/assets/media/falcon-users-guide-2025-05-09.pdf" class="source-link" target="_blank" rel="noopener">View source &#8599;</a>
+        </li>
+        <li class="source-item">
+          <span class="source-authors">Nuclear-Power.com</span>
+          <span class="source-title">Brayton Cycle: Gas Turbine Engine</span>
+          <span class="source-venue">Nuclear Power, 2024. Accessed Apr. 17, 2026.</span>
           <a href="https://www.nuclear-power.com/nuclear-engineering/thermodynamics/thermodynamic-cycles/brayton-cycle-gas-turbine-engine/" class="source-link" target="_blank" rel="noopener">View source &#8599;</a>
         </li>
         <li class="source-item">
-          <span class="source-authors">NASA</span>
-          <span class="source-title">Kilopower, Reactor Using Stirling Technology (KRUSTY) Ground Test Results</span>
-          <span class="source-venue">NASA Technical Reports Server, 2018.</span>
-          <a href="#sources" class="source-link">Link to be added</a>
+          <span class="source-authors">D. I. Poston et al.</span>
+          <span class="source-title">Design and Analysis of the SAFE-400 Space Fission Reactor</span>
+          <span class="source-venue">AIP Conference Proceedings, vol. 608, pp. 578-588, 2002.</span>
+          <a href="https://ui.adsabs.harvard.edu/abs/2002AIPC..608..578P/abstract" class="source-link" target="_blank" rel="noopener">View source &#8599;</a>
         </li>
         <li class="source-item">
-          <span class="source-authors">Idaho National Laboratory / NASA Marshall Space Flight Center</span>
-          <span class="source-title">SAFE-400 Reactor Design and Development Documentation</span>
-          <span class="source-venue">Idaho National Laboratory.</span>
-          <a href="#sources" class="source-link">Link to be added</a>
-        </li>
-        <li class="source-item">
-          <span class="source-authors">Colaprete, A., et al.</span>
-          <span class="source-title">Detection of Water in the LCROSS Ejecta Plume</span>
-          <span class="source-venue">Science, Vol. 330, Issue 6003, pp. 463–468, 2010.</span>
-          <a href="#sources" class="source-link">Link to be added</a>
-        </li>
-        <li class="source-item">
-          <span class="source-authors">NASA</span>
-          <span class="source-title">Artemis Program, Lunar Surface Power Requirements</span>
-          <span class="source-venue">NASA Human Research Program / Exploration Systems Development.</span>
-          <a href="#sources" class="source-link">Link to be added</a>
-        </li>
-        <li class="source-item">
-          <span class="source-authors">Mason, L. S.</span>
-          <span class="source-title">A Comparison of Fission Power System Options for Lunar and Mars Surface Applications</span>
-          <span class="source-venue">NASA/TM-2006-214120, NASA Glenn Research Center, 2006.</span>
-          <a href="#sources" class="source-link">Link to be added</a>
+          <span class="source-authors">M. Houts, L. Kos, and D. Poston</span>
+          <span class="source-title">Potential Operating Orbits for the SAFE-400</span>
+          <span class="source-venue">NASA Marshall Space Flight Center, Huntsville, AL, NASA Technical Report, 2002.</span>
+          <a href="https://ntrs.nasa.gov/api/citations/20020066158/downloads/20020066158.pdf" class="source-link" target="_blank" rel="noopener">View source &#8599;</a>
         </li>
       </ol>
-      <p class="sources-note">
-        &#128221; This reference list is in progress. Replace placeholder entries with full citations. For open-access NASA technical reports, links can be found at <strong>ntrs.nasa.gov</strong>.
-      </p>
         </div>
       </div>
     </div>
@@ -1318,7 +1313,12 @@
       <div class="advisor-block">
         <div class="advisor-label">Advised by</div>
         <div class="advisor-names">Professor Selcuk Guceri &amp; Dr. Malachi Nelson</div>
-        <div style="margin-top:.5rem;font-size:.82rem;color:var(--text-muted);">
+        <div class="advisor-depts">
+          <span>WPI Mechanical Engineering</span>
+          <span class="advisor-sep">&middot;</span>
+          <span>Idaho National Laboratory</span>
+        </div>
+        <div style="margin-top:.65rem;font-size:.82rem;color:var(--text-muted);">
           With thanks to Idaho National Laboratory, NASA, and the designers of the SAFE-400 reactor.
         </div>
         <a href="https://www.wpi.edu" class="wpi-badge" target="_blank" rel="noopener" style="margin-top:1.25rem;display:inline-block;">

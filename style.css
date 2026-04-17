@@ -152,8 +152,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .acc-body { max-height: 0; overflow: hidden; transition: max-height .38s cubic-bezier(0.4,0,0.2,1); }
 .acc-inner { padding: 0 1.5rem 2.5rem; }
 
-/* ─── Section label / intro ─────────────────────────── */
-.section-label { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
+/* ─── Section intro ─────────────────────────────────── */
 .section-intro  { color: var(--text-muted); font-size: 1rem; max-width: 720px; margin-bottom: 2rem; line-height: 1.8; }
 .body-text p    { color: var(--text-muted); margin-bottom: 1rem; line-height: 1.85; }
 .body-text p:last-child { margin-bottom: 0; }
@@ -167,16 +166,10 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .term.tip-left::after  { left: 0; transform: none; }
 .term.tip-right::after { left: auto; right: 0; transform: none; }
 
-/* ─── Content grid (text + aside) ──────────────────── */
-.content-grid { display: grid; grid-template-columns: 1fr 300px; gap: 2.5rem; align-items: start; margin-top: 1.5rem; }
-
-/* ─── Fact cards ────────────────────────────────────── */
-.fact-stack { display: flex; flex-direction: column; gap: .85rem; }
-.fact-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; transition: border-color var(--tr); }
-.fact-card:hover { border-color: var(--border-acc); }
-.fact-number { font-family: var(--font-head); font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: .3rem; }
-.fact-unit   { font-size: .95rem; }
-.fact-label  { font-size: .78rem; color: var(--text-muted); line-height: 1.4; }
+/* ─── Expand / Collapse All controls ───────────────── */
+.acc-controls { display: flex; gap: .6rem; padding: .75rem 1.5rem; border-top: 1px solid var(--border); background: var(--bg); }
+.acc-ctrl-btn { background: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .32rem .85rem; font-family: var(--font-head); font-size: .73rem; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: color var(--tr), border-color var(--tr), background var(--tr); }
+.acc-ctrl-btn:hover { color: var(--accent); border-color: var(--border-acc); background: var(--accent-dim); }
 
 /* ─── Timeline ──────────────────────────────────────── */
 .timeline-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 1.5rem; }
@@ -198,7 +191,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 
 /* ─── Artemis mission cards ─────────────────────────── */
 .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-.mission-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; position: relative; overflow: hidden; transition: border-color var(--tr), transform var(--tr); }
+.mission-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; position: relative; overflow: hidden; transition: border-color var(--tr); }
 .mission-card:hover { border-color: var(--border-acc); }
 .mission-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
 .mission-card.done::before   { background: var(--green); }
@@ -243,7 +236,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 
 /* ─── Objectives ────────────────────────────────────── */
 .objectives-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; margin-top: 1.5rem; }
-.obj-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; transition: border-color var(--tr), transform var(--tr); }
+.obj-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; transition: border-color var(--tr); }
 .obj-card:hover { border-color: var(--border-acc); }
 .obj-icon { font-size: 1.5rem; margin-bottom: .65rem; }
 .obj-card h3 { color: var(--accent); margin-bottom: .4rem; font-size: .95rem; }
@@ -251,7 +244,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 
 /* ─── Methods ───────────────────────────────────────── */
 .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
-.method-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; position: relative; overflow: hidden; transition: border-color var(--tr), transform var(--tr); }
+.method-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; position: relative; overflow: hidden; transition: border-color var(--tr); }
 .method-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--accent), var(--accent2)); }
 .method-card:hover { border-color: var(--border-acc); }
 .method-num  { font-family: var(--font-head); font-size: 2rem; font-weight: 700; color: var(--text-faint); line-height: 1; margin-bottom: .65rem; }
@@ -353,25 +346,19 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 
 /* ─── Team ──────────────────────────────────────────── */
 .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-.team-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1rem 1.1rem; text-align: center; transition: border-color var(--tr), transform var(--tr); }
+.team-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1rem 1.1rem; text-align: center; transition: border-color var(--tr); }
 .team-card:hover { border-color: var(--border-acc); }
-.team-photo { width: 70px; height: 70px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--border-acc); object-fit: cover; margin: 0 auto .75rem; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.team-photo img  { width: 100%; height: 100%; object-fit: cover; }
-.team-photo-placeholder { width: 70px; height: 70px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--border-acc); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--accent); margin: 0 auto .75rem; }
+.team-initial { width: 60px; height: 60px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--border-acc); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--accent); margin: 0 auto .75rem; }
 .team-name { font-weight: 600; font-size: .88rem; margin-bottom: .2rem; }
 .team-dept { font-size: .75rem; color: var(--text-muted); }
 
 .advisor-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
 .advisor-label { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-faint); margin-bottom: .4rem; }
-.advisor-names { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin-bottom: .65rem; }
-.advisor-thanks { font-size: .82rem; color: var(--text-muted); margin-bottom: 1rem; }
+.advisor-names { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; margin-bottom: .4rem; }
+.advisor-depts { font-size: .8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: center; gap: .5rem; flex-wrap: wrap; margin-bottom: .65rem; }
+.advisor-sep { color: var(--text-faint); }
 .wpi-badge { display: inline-block; background: var(--accent-dim); border: 1px solid var(--border-acc); color: var(--accent); font-size: .75rem; font-weight: 600; padding: .3rem .9rem; border-radius: 999px; letter-spacing: .05em; }
 
-/* ─── Paper download button ─────────────────────────── */
-.download-btn { display: inline-flex; align-items: center; gap: .6rem; background: var(--bg-card); border: 1.5px solid var(--border-acc); border-radius: var(--radius); padding: .85rem 1.4rem; color: var(--text); font-family: var(--font-head); font-size: .9rem; font-weight: 600; transition: background var(--tr), transform var(--tr); cursor: pointer; margin-top: 1.5rem; }
-.download-btn:hover { background: var(--accent-dim); transform: translateY(-2px); opacity: 1; }
-.download-btn .dl-icon { font-size: 1.2rem; }
-.download-note { font-size: .78rem; color: var(--text-muted); margin-top: .5rem; }
 
 /* ─── Figures & Images ──────────────────────────────── */
 .fig { margin: 0; display: flex; flex-direction: column; }

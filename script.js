@@ -135,6 +135,40 @@
 
 function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
+/* ─── Active nav highlight ───────────────────────────── */
+(function () {
+  const links = {};
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+    links[a.getAttribute('href').slice(1)] = a;
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const a = links[e.target.id];
+      if (a) a.classList.toggle('active', e.isIntersecting);
+    });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  document.querySelectorAll('.acc-section, #hero').forEach(s => obs.observe(s));
+})();
+
+/* ─── Expand / Collapse all ──────────────────────────── */
+(function () {
+  const sections = document.querySelectorAll('.acc-section');
+  function openSec(sec) {
+    const body = sec.querySelector('.acc-body');
+    sec.classList.add('open');
+    sec.querySelector('.acc-head').setAttribute('aria-expanded', 'true');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+  function closeSec(sec) {
+    const body = sec.querySelector('.acc-body');
+    sec.classList.remove('open');
+    sec.querySelector('.acc-head').setAttribute('aria-expanded', 'false');
+    body.style.maxHeight = '0';
+  }
+  document.getElementById('expand-all')?.addEventListener('click', () => sections.forEach(openSec));
+  document.getElementById('collapse-all')?.addEventListener('click', () => sections.forEach(closeSec));
+})();
+
 /* ─── Subsystem Tabs ─────────────────────────────────── */
 (function () {
   document.querySelectorAll('.subsystem-tabs').forEach(tabGroup => {
