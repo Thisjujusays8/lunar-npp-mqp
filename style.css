@@ -223,7 +223,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .power-total-label { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); margin-bottom: .4rem; }
 .power-total-num   { font-family: var(--font-head); font-size: 2.8rem; font-weight: 700; color: var(--accent); line-height: 1; }
 .power-total-note  { font-size: .75rem; color: var(--text-muted); margin-top: .5rem; line-height: 1.5; }
-.power-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.power-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .power-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.2rem; transition: border-color var(--tr); }
 .power-card:hover { border-color: var(--border-acc); }
 .power-icon    { font-size: 1.4rem; margin-bottom: .4rem; }
@@ -252,7 +252,7 @@ h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .method-card p  { font-size: .85rem; color: var(--text-muted); line-height: 1.7; }
 
 /* ─── Architecture diagram ──────────────────────────── */
-.arch-diagram { display: flex; align-items: center; overflow-x: auto; padding: 1rem 0 1rem; -webkit-overflow-scrolling: touch; }
+.arch-diagram { display: flex; align-items: center; justify-content: center; overflow-x: auto; padding: 1rem 0 1rem; -webkit-overflow-scrolling: touch; }
 .arch-node { flex-shrink: 0; width: 155px; background: var(--bg-card); border: 1.5px solid var(--border); border-top: 3px solid var(--accent-color, var(--accent)); border-radius: var(--radius); padding: 1.2rem .9rem 1rem; text-align: center; transition: transform var(--tr), box-shadow var(--tr); }
 .arch-node:hover { border-color: var(--border-acc); }
 .arch-icon { font-size: 1.6rem; margin-bottom: .4rem; }
@@ -417,8 +417,12 @@ footer { background: var(--bg-surface); border-top: 1px solid var(--border); pad
   .acc-inner { padding: 0 1rem 2rem; }
   .acc-sub  { display: none; }
 }
+@media (max-width: 700px) {
+  .power-grid { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; }
+  .power-grid { grid-template-columns: 1fr; }
   .results-grid { grid-template-columns: 1fr 1fr; }
   .arch-node { width: 110px; }
   .arch-desc { display: none; }
